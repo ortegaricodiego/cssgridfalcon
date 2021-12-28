@@ -1,0 +1,14 @@
+.contenedor {
+  display: grid;
+  height: 700px;
+  column-gap: 20px;
+  row-gap: 20px;
+  grid-template-columns: repeat(3, 150px);
+  grid-template-rows: repeat(3, 150px);
+
+  /*ALINEACION HORIZONTAL*/
+  justify-content: space-evenly;
+
+  /*ALINEACION VERTICAL*/
+  align-content: space-evenly;
+}

@@ -1,0 +1,11 @@
+.contenedor {
+  display: grid;
+  column-gap: 20px;
+  row-gap: 20px;
+
+  /*SOLO SE UTILIZA CON REPEAT*/
+  /*AUTO FIT: OCUPA TODO EL ESPACIO*/
+  /*AUTO FILL: DEJA ESPACIO DISPONIBLE*/
+
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}

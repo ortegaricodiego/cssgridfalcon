@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #e9ecf4;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+}
+
+.contendedor {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  display: grid;
+  column-gap: 20px;
+  row-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+
+  grid-template-areas:
+    "header		header	 	header"
+    "contenido	contenido 	sidebar"
+    "widget-1	widget-2	sidebar"
+    "footer		footer		footer";
+}
+
+.contendedor > div,
+.contendedor .header,
+.contendedor .contenido,
+.contendedor .sidebar,
+.contendedor .footer {
+  background: white;
+  padding: 20px;
+  border-radius: 4px;
+}
+
+.contendedor .header {
+  background: #12203e;
+  color: white;
+  /* grid-column-start: 1;
+  grid-column-end: -1; */
+  grid-area: header;
+}
+
+.contendedor .contenido {
+  /* grid-column: span 2; */
+  grid-area: contenido;
+}
+
+.contendedor .sidebar {
+  grid-column: 3 / 4;
+  background: #faa43d;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  /* grid-row: span 2; */
+  grid-area: sidebar;
+}
+
+.contendedor .widget-1,
+.contendedor .widget-2 {
+  background: #55a8fd;
+  color: white;
+  height: 100px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contendedor .widget-1 {
+  grid-area: widget-1;
+}
+
+.contendedor .widget-2 {
+  grid-area: widget-2;
+}
+
+.contendedor .footer {
+  background: #12203e;
+  color: white;
+  /* grid-column: span 3; */
+  grid-area: footer;
+}
+
+@media screen and (max-width: 768px) {
+  .contendedor {
+    grid-template-areas:
+      "header		header	 	header"
+      "contenido	contenido 	contenido"
+      "sidebar		sidebar		sidebar"
+      "widget-1		widget-1	widget-2"
+      "footer		footer		footer";
+  }
+}
+
+/* @media screen and (max-width: 768px) {
+  .contendedor .contenido {
+    grid-column: 1 / -1;
+  }
+
+  .contendedor .sidebar {
+    grid-column: 1 / -1;
+  }
+
+  .contendedor .widget-1 {
+    grid-column: span 2;
+  }
+} */
